@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=Noto+Kufi+Arabic:wght@300&family=Open+Sans:wght@700&family=Ubuntu:wght@500&display=swap"
+    rel="stylesheet">
+  <title>Rock-Paper-Scissors Master</title>
+</head>
+<body>
+
+  <div class="black-screen"></div>
+
+  <div class="rules">
+    <h1 class="rules-title">RULES</h1>
+    <img src="/images/icon-close.svg" alt="Close Rules" class="rules-close">
+    <img src="/images/image-rules.svg" alt="Rules Image" class="rules-img">
+  </div>
+
+
+  <button class="rules-btn">RULES</button>
+
+  <section class="score-section">
+    <img src="/images/logo.svg" alt="Logo" class="logo">
+
+    <div class="score-cont">
+      <div class="score-title">SCORE</div>
+      <div class="score-num">0</div>
+    </div>
+  </section>
+
+  <div class="comp-1">
+    <img src="/images/bg-triangle.svg" alt="Triangle" class="triangle">
+    
+    <div class="rock item game" rock>
+      <img src="/images/icon-rock.svg" alt="Rock Icon" class="rock-icon">
+    </div>
+    
+    <div class="paper item game" paper>
+      <img src="/images/icon-paper.svg" alt="Paper Icon" class="paper-icon">
+    </div>
+    
+    <div class="scissors item game" scissors>
+      <img src="/images/icon-scissors.svg" alt="Scissors Icon" class="scissors-icon">
+    </div>
+  </div>
+
+
+  <div class="comp-2">
+    <div class="left-side">
+      <h1 class="player-title">YOU PICKED</h1>
+    </div>
+    
+    <div class="right-side">
+      <h1 class="enemy-title">THE HOUSE PICKED</h1>
+    </div>
+    
+    <button class="play-again-btn">PLAY AGAIN</button>
+    <div class="msg">YOU WIN</div>
+
+    <div class="placeholder"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.comp-1 {
+    display: block;
+}
+
+.comp-2 {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    overflow: hidden;
+}
+
+:root {
+    --dark-blue: hsl(229, 25%, 31%);
+    --usual-red: hsl(349, 70%, 56%);
+    --item-width: 170px;
+    --item-height: 170px;
+    --usual-padding: 25px;
+    --score-text-color: hsl(229, 64%, 46%);
+}
+
+/*******************************************************************/
+.black-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    opacity: .5;
+}
+
+
+.rules {
+    border-radius: 15px;
+    width: 360px;
+    height: 400px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: var(--usual-padding);
+    color: var(--dark-blue);
+    position: absolute;
+    z-index: 1;
+}
+
+.rules-title {
+    display: inline-block;
+}
+
+.rules-close {
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.rules-img {
+    margin-top: 40px;
+}
+
+.rules-btn {
+    width: 130px;
+    height: 40px;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px white solid;
+    color: white;
+    cursor: pointer;
+}
+
+/*******************************************************************/
+
+.score-section {
+    width: 50%;
+    height: 170px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 2px hsl(217, 16%, 45%) solid;
+    margin: 25px auto;
+    padding: var(--usual-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+}
+
+.items span {
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.score-cont {
+    width: 140px;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.score-title {
+    color: var(--score-text-color);
+    position: absolute;
+    top: 15px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.score-num {
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--dark-blue);
+    position: absolute;
+    top: 30px;
+}
+
+/*******************************************************************/
+.comp-1 {
+    width: 450px;
+    height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    margin-top: 50px;
+}
+
+.item {
+    width: var(--item-width);
+    height: var(--item-height);
+    background-color: white;
+    border-radius: 50%;
+    border: 25px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 1px 7px 30px -16px black, -1px 9px 29px -4px black;
+    position: absolute;
+}
+
+.rock {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%)) border-box;
+    top: 55%;
+}
+
+.rock-2 {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%)) border-box;
+}
+
+.paper {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%)) border-box;
+    top: 0;
+    left: 0;
+}
+
+.paper-2 {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%)) border-box;
+}
+
+.scissors {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%)) border-box;
+    top: 0;
+    right: 0;
+}
+
+.scissors-2 {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%)) border-box;
+}
+
+/*******************************************************************/
+.comp-2 h1 {
+    color: white;
+    letter-spacing: 3px;
+    position: absolute;
+}
+
+
+.left-side {
+    position: absolute;
+    left: 32%;
+    top: 70%;
+}
+
+.left-side-anim {
+    animation-name: outro-left;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.player-title {
+    transform: translate(-50%,-220px);
+    white-space: nowrap;
+}
+
+.picked {
+    width: 270px;
+    height: 270px;
+    border: 30px solid transparent;
+    transform: translate(-50%, -50%);
+}
+
+.picked img {
+    width: 80px;
+}
+
+.right-side {
+    position: absolute;
+    left: 65%;
+    top: 70%;
+}
+
+.right-side-anim {
+    animation-name: outro-right;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.enemy-title {
+    transform: translate(-50%, -220px);
+    white-space: nowrap;
+}
+
+.enemy-picked {
+    width: 270px;
+    height: 270px;
+    border: 30px solid transparent;
+    transform: translate(-50%, -50%);
+}
+
+.enemy-picked img {
+    width: 80px;
+}
+
+.placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: var(--dark-blue);
+    border-radius: 50%;
+    opacity: .3;
+    position: absolute;
+    top: 55%;
+    left: 60%;
+}
+
+@keyframes outro-left {
+    from {
+        left: 32%;
+    }
+
+    to {
+        left: 25%;
+    }
+}
+
+@keyframes outro-right {
+    from {
+        left: 65%;
+    }
+
+    to {
+        left: 72%;
+    }
+}
+
+/*******************************************************************/
+.play-again-btn {
+    width: 200px;
+    height: 45px;
+    background-color: white;
+    color: var(--dark-blue);
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-60%, -50%);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: none;
+}
+
+.msg {
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-65%, -50%);
+    display: none;
+}
+
+.highlighted {
+    transition: all .3s;
+    box-shadow: inset 1px 7px 30px -16px black, -1px 9px 29px -4px black, white 0px 0px 90px 0px;
+}
+
+/*******************************************************************/
+
+@media (max-width: 720px) {
+    .score-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .comp-1 {
+        width: 350px;
+        height: 350px;
+    }
+
+    :root {
+        --item-width: 120px;
+        --item-height: 120px;
+    }
+
+    .rock,
+    .scissors,
+    .paper {
+        border: 15px transparent solid;
+    }
+}
+
+@media (max-width: 1000px) {
+    .rock-2,
+    .scissors-2,
+    .paper-2 {
+        width: 170px;
+        height: 170px;
+        border: 20px transparent solid;
+    }
+
+    .rock-2 img,
+    .scissors-2 img,
+    .paper-2 img {
+        width: 50px;
+    }
+
+    @keyframes outro-right {
+        from {
+            left: 78%;
+        }
+
+        to {
+            left: 85%;
+        }
+    }
+
+    @keyframes outro-left {
+        from {
+            left: 30%;
+        }
+
+        to {
+            left: 15%;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .rock-2,
+    .scissors-2,
+    .paper-2 {
+        width: 100px;
+        height: 100px;
+        border: 10px transparent solid;
+    }
+    
+    .rock-2 img,
+    .scissors-2 img,
+    .paper-2 img {
+        width: 30px;
+    }
+
+    .player-title,
+    .enemy-title {
+        font-size: 20px;
+    }
+
+    .player-title {
+        transform: translate(-30%, -220px);
+    }
+
+    .enemy-title {
+        transform: translate(-70%, -220px);
+    }
+
+    .play-again-btn {
+        width: 120px;
+        height: 30px;
+    }
+
+    .msg {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .enemy-title {
+        white-space: wrap;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .score-cont {
+        width: 100px;
+        height: 90%;
+    }
+}
